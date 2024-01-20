@@ -72,3 +72,13 @@ B5: Vào page.js foder muốn sử dụng api để xử lí
   B2: Hooks
   B3: page
 -->
+
+
+
+
+<!-- git: 
+PS D:\desktop\Nodejs\App\booking-fe> git remote set-url origin https://github.com/lethachthao/Booking-fe_t-l-m.git
+PS D:\desktop\Nodejs\App\booking-fe> git remote rename origin master 
+PS D:\desktop\Nodejs\App\booking-fe> git remote add origin https://github.com/lethachthao/Booking-fe_t-l-m.git
+PS D:\desktop\Nodejs\App\booking-fe> git push -u origin main 
+-->

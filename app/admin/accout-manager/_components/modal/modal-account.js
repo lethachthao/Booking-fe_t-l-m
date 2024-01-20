@@ -1,13 +1,7 @@
 import { Modal } from 'antd';
-import AddUserForm from '../form/add-user';
+import FormUser from '../form/form-user';
 
-const EditAccountModal = ({
-  isOpen,
-  isSubmitting,
-  data,
-  onSubmit,
-  onCancel,
-}) => {
+const AccountModal = ({ isOpen, isSubmitting, data, onSubmit, onCancel }) => {
   return (
     <Modal
       open={isOpen}
@@ -16,7 +10,7 @@ const EditAccountModal = ({
       onCancel={onCancel}
       destroyOnClose
     >
-      <AddUserForm
+      <FormUser
         defaultData={data}
         isSubmitting={isSubmitting}
         onSubmit={onSubmit}
@@ -25,4 +19,4 @@ const EditAccountModal = ({
     </Modal>
   );
 };
-export default EditAccountModal;
+export default AccountModal;

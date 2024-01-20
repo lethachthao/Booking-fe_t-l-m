@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useMemo } from 'react';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Avatar, Button, Checkbox, Form, Input, Radio, Spin } from 'antd';
 
@@ -14,23 +14,18 @@ const initialData = {
   role: '',
 };
 
-const AddUserForm = ({
-  isSubmitting = false,
-  defaultData = { initialData },
-  onSubmit,
-}) => {
+const FormUser = ({ isSubmitting = false, defaultData, onSubmit }) => {
   const { name, phoneNumber, address, accountType, role, email, password } =
-    defaultData;
+    defaultData || initialData;
 
   const [form] = Form.useForm();
-  const nameValue = Form.useWatch('name', form);
-
-  // console.log(defaultData);
 
   const onFinish = (values) => {
     onSubmit?.({ ...defaultData, ...values });
-    form.resetFields();
+    form.resetFields(); //khi ấn tạo tài khoản xóa bỏ dữ liệu ở input
   };
+
+  // const isEditModel = useMemo(() => Boolean(defaultData), [defaultData]);
   return (
     <div className="flex flex-col rounded-xl gap-4 bg-white p-8">
       <Spin spinning={isSubmitting}>
@@ -180,4 +175,4 @@ const AddUserForm = ({
     </div>
   );
 };
-export default AddUserForm;
+export default FormUser;

@@ -15,7 +15,7 @@ const Patient = () => {
     <div>
       <Title level={2}>Quản lí Bệnh nhân</Title>
 
-      <UserList data={data.data} />
+      <UserList data={data && data.data} />
     </div>
   );
 };

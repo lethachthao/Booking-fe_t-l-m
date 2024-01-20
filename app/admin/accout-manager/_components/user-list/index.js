@@ -6,8 +6,7 @@ import { DeleteOutlined, EditOutlined } from '@ant-design/icons';
 import RenderResult from 'next/dist/server/render-result';
 import useDeleteAccount from '@/app/admin/_hooks/use-delete-account';
 import useEditAccount from '@/app/admin/_hooks/use-edit-account';
-import { useToggle } from '@/hooks/use-toggle';
-import EditAccountModal from '../modal/edit-account';
+import AccountModal from '../modal/modal-account';
 
 const UserList = ({ data }) => {
   const { mutate: mutateDeleteAccount } = useDeleteAccount();
@@ -21,11 +20,6 @@ const UserList = ({ data }) => {
       dataIndex: 'name',
       key: 'name',
     },
-    // {
-    //   title: 'Age',
-    //   dataIndex: 'age',
-    //   key: 'age',
-    // },
     {
       title: 'Phone Number',
       dataIndex: 'phoneNumber',
@@ -71,7 +65,7 @@ const UserList = ({ data }) => {
     },
   ];
   const normalData = useMemo(() => {
-    return data.map((account) => ({
+    return data?.map((account) => ({
       name: account.name, //name: dataIndex
       // age: 10,
       phoneNumber: account.phoneNumber,
@@ -81,7 +75,7 @@ const UserList = ({ data }) => {
   }, [data]);
 
   const editData = useMemo(() => {
-    return data.find((account) => account.email === editId);
+    return data?.find((account) => account.email === editId);
   }, [data, editId]);
 
   function deleteAccount(email) {
@@ -98,11 +92,10 @@ const UserList = ({ data }) => {
       },
     });
   }
-  console.log(editData);
   return (
     <>
-      <Table pagination={false} columns={columns} dataSource={normalData} />;
-      <EditAccountModal
+      <Table pagination={false} columns={columns} dataSource={normalData} />
+      <AccountModal
         isOpen={Boolean(editId)}
         isSubmitting={isSubmitting}
         data={editData}
