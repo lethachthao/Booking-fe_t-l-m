@@ -4,8 +4,8 @@ import React, { useMemo, useState } from 'react';
 import { Button, Table } from 'antd';
 import { DeleteOutlined, EditOutlined } from '@ant-design/icons';
 import RenderResult from 'next/dist/server/render-result';
-import useDeleteAccount from '@/app/admin/_hooks/use-delete-account';
-import useEditAccount from '@/app/admin/_hooks/use-edit-account';
+import useDeleteAccount from '@/app/admin/accout-manager/_hooks/use-delete-account';
+import useEditAccount from '@/app/admin/accout-manager/_hooks/use-edit-account';
 import AccountModal from '../modal/modal-account';
 
 const UserList = ({ data }) => {

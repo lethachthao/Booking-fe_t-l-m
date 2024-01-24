@@ -1,5 +1,5 @@
 import { useMutation } from '@tanstack/react-query';
-import AddAccount from '../accout-manager/add-accout/page';
+import AddAccount from '../add-accout/page';
 import { addAccount } from '../_services/account-service';
 import { App } from 'antd';
 

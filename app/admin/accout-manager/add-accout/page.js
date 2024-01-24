@@ -1,7 +1,7 @@
 'use client';
 
 import FormUser from '../_components/form/form-user';
-import useAddAccont from '../../_hooks/use-add-account';
+import useAddAccont from '../_hooks/use-add-account';
 
 const AddAccount = () => {
   const { mutate } = useAddAccont();

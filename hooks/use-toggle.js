@@ -5,12 +5,12 @@ export const useToggle = (initialToggle) => {
   const open = () => {
     setToggleState(true);
   };
-  const closs = () => {
+  const close = () => {
     setToggleState(false);
   };
   const toggle = () => {
     setToggleState(!toggle);
   };
 
-  return { toggle, open, closs, toggleState };
+  return { toggle, open, close, toggleState };
 };

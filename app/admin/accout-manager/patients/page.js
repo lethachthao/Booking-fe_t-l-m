@@ -1,6 +1,6 @@
 'use client';
 
-import useAccountType from '../../_hooks/use-account-type';
+import useAccountType from '../_hooks/use-account-type';
 import UserList from '../_components/user-list';
 import { Typography } from 'antd';
 
